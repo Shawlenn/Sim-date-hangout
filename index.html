@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles.css">
+        
+    </head> 
+    <body>
+        <div class="container">
+            <div >
+                <h1 class = "header_text">Will you go on a date with me? Pleasee..</h1>
+            </div>
+            <div class="gif_container">
+                <img src="https://media.giphy.com/media/D8k8MpjAun3633qpkE/giphy.gif">
+            </div>
+            <div class = "buttons">
+                <button class="btn" id = "yesButton" onclick="nextPage()">A. Yes, off course</button>
+                <button class="btn" id="noButton" onmouseover="moveButton()" 
+                            onclick="moveButton()">B. No (click A)</button>
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+                    
+                    function moveButton() {
+                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
+                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+                        document.getElementById('noButton').style.left = `${x}px`;
+                        document.getElementById('noButton').style.top = `${y}px`;
+
+                        // Adjust the button position to stay within the screen boundaries
+                                var adjustedX = Math.min(maxX, mouseX);
+                                var adjustedY = Math.min(maxY, mouseY);
+
+                         // Set the button position
+                                button.style.left = adjustedX + 'px';
+                                button.style.top = adjustedY + 'px';
+                    }
+                </script> 
+            </div>
+        </div>
+       
+    </body> 
+</html>
